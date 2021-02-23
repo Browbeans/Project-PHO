@@ -19,7 +19,7 @@ const MainContent: React.FC<Props> = ()  => {
     return(
         <div style={rootStyle}>
             <ContentItem title="Avenyn" image={imageAvenyn}/>
-            <ContentItem title="Andra Lång" image={imageJarntorget}/>
+            <ContentItem title="Järntorget" image={imageJarntorget}/>
             <ContentItem title="Hisingen" image={imageHisingen}/>
         </div>
     )
