@@ -9,15 +9,15 @@ function NavBar() {
 }
 
 const rootStyle: CSSProperties = {
-    width: '100%', 
-    height: '5rem',
-    background: 'white', 
-    display: 'flex', 
-    justifyContent: 'center',
-    alignItems: 'center',
-}
+  width: "100%",
+  height: '10rem',
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
 const textStyle: CSSProperties = {
-    
+    color: 'white',
+    fontSize: '3rem',
 }
 
 export default NavBar; 

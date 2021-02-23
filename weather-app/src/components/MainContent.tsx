@@ -1,25 +1,29 @@
 import React, { CSSProperties } from 'react'; 
 import { displayPartsToString } from 'typescript';
 import ContentItem from './ContentItem';
-import ContentItemTwo from './ContentItemTwo';
-import ContentItemThree from './ContentItemThree';
+
+const imageS =
+  "https://www.avenyn.se/wp-content/uploads/2016/11/avenyvandring700x350.jpg";
 
 
-function MainContent() {
+interface Props{
+    
+}
+
+const MainContent: React.FC<Props> = ()  => {
     return(
         <div style={rootStyle}>
-            <ContentItem/>
-            <ContentItemTwo/>
-            <ContentItemThree/>
+            <ContentItem title="Avenyn" image={imageS}/>
+            <ContentItem title="Andra Lång" image={imageS}/>
+            <ContentItem title="Hisingen" image={imageS}/>
         </div>
     )
 }
 
 const rootStyle: CSSProperties = {
-  height: "80vh",
-  background: "#1f4287",
   display: "flex",
   flexWrap: "wrap",
+  height: '90rem',
   justifyContent: "space-around",
   alignItems: "center",
 };

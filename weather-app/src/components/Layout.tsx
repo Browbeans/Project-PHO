@@ -1,5 +1,4 @@
 import React, { CSSProperties } from 'react'; 
-import FooterContent from './FooterContent';
 import MainContent from './MainContent';
 import NavBar from './NavBar'
 
@@ -8,7 +7,6 @@ function Layout() {
     <div style={rootStyle}>
         <NavBar/>
         <MainContent/>
-        <FooterContent/>
     </div>
 
     ) 
@@ -16,7 +14,11 @@ function Layout() {
 
 const rootStyle: CSSProperties = {
     height: '100vh', 
-    background:'gray'
+    background:'gray',
+    overflow: 'hidden',
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 1
 }
 
 export default Layout; 
