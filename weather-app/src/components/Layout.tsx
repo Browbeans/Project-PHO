@@ -1,7 +1,22 @@
-import React from 'react'; 
+import React, { CSSProperties } from 'react'; 
+import FooterContent from './FooterContent';
+import MainContent from './MainContent';
+import NavBar from './NavBar'
 
 function Layout() {
-    return <h1>HEJSAN</h1>
+    return(
+    <div style={rootStyle}>
+        <NavBar/>
+        <MainContent/>
+        <FooterContent/>
+    </div>
+
+    ) 
+}
+
+const rootStyle: CSSProperties = {
+    height: '100vh', 
+    background:'gray'
 }
 
 export default Layout; 
