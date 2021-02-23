@@ -10,8 +10,7 @@ function FooterContent() {
 
 const rootStyle: CSSProperties = {
     width: '100%', 
-    position: 'fixed',
-    bottom: 0, 
+    height: '5rem', 
     background: 'white', 
     display: 'flex', 
     justifyContent: 'center'
