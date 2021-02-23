@@ -1,0 +1,7 @@
+Yellow : #f3cf7a
+
+Orange : #be6a15
+
+Red : #ac3f21
+
+Brown : #6e3b3b
