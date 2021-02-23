@@ -16,8 +16,9 @@ const rootStyle: CSSProperties = {
   alignItems: "center",
 };
 const textStyle: CSSProperties = {
-    color: 'white',
-    fontSize: '3rem',
-}
+  color: "black",
+  fontSize: "3rem",
+  textShadow: "1px 3px .1px #fff",
+};
 
 export default NavBar; 

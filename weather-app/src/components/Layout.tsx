@@ -13,12 +13,12 @@ function Layout() {
 }
 
 const rootStyle: CSSProperties = {
-    height: '100vh', 
-    background:'gray',
-    overflow: 'hidden',
-    display: 'flex',
-    flexDirection: 'column',
-    flex: 1
-}
+  height: "100vh",
+  background: "#f3cf7a",
+  overflow: "hidden",
+  display: "flex",
+  flexDirection: "column",
+  flex: 1,
+};
 
 export default Layout; 
