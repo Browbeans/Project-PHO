@@ -8,7 +8,7 @@ function ContentItem(props: Props) {
     return (
       <div style={rootStyle}>
         <h2 style={textStyle}>{props.title}</h2>
-        <img style={imageStyle} src={props.image} />
+        <img style={imageStyle} src={props.image} alt="" />
       </div>
     );
 }

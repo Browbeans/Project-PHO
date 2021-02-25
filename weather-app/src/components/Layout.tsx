@@ -1,4 +1,6 @@
 import React, { CSSProperties } from 'react'; 
+import { Route, Switch } from 'react-router';
+import Avenyn from './Avenyn';
 import MainContent from './MainContent';
 import NavBar from './NavBar'
 
@@ -6,6 +8,10 @@ function Layout() {
     return(
     <div style={rootStyle}>
         <NavBar/>
+        <Switch>
+          <Route path="/" exact component={Layout}/>
+          <Route path="/avenyn" component={Avenyn} />
+        </Switch>
         <MainContent/>
     </div>
 
