@@ -1,16 +1,14 @@
 import React, { CSSProperties } from 'react'
 
-const Avenyn = () => {
+const Jarntorget = () => {
     return (
-        <div>
-           <main style={rootStyle}>
-               <h1>Avenyn</h1>
-               </main> 
+        <div style={rootStyle}>
+            <h1>Järntorget</h1>
         </div>
     )
 }
 
-export default Avenyn
+export default Jarntorget
 
 
 const rootStyle: CSSProperties = {

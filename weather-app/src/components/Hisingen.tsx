@@ -1,17 +1,14 @@
 import React, { CSSProperties } from 'react'
 
-const Avenyn = () => {
+const Hisingen = () => {
     return (
-        <div>
-           <main style={rootStyle}>
-               <h1>Avenyn</h1>
-               </main> 
+        <div style={rootStyle}>
+            <h1>Hisingen</h1>
         </div>
     )
 }
 
-export default Avenyn
-
+export default Hisingen
 
 const rootStyle: CSSProperties = {
   background: "#f3cf7a",

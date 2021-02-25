@@ -1,21 +1,28 @@
 import React, { CSSProperties } from 'react'; 
 import { Route, Switch } from 'react-router';
 import Avenyn from './Avenyn';
+import Hisingen from './Hisingen';
+import Jarntorget from './Jarntorget';
 import MainContent from './MainContent';
 import NavBar from './NavBar'
 
 function Layout() {
-    return(
-    <div style={rootStyle}>
-        <NavBar/>
+    return (
+      <div style={rootStyle}>
+        <NavBar />
         <Switch>
-          <Route path="/" exact component={Layout}/>
           <Route path="/avenyn" component={Avenyn} />
         </Switch>
-        <MainContent/>
-    </div>
+        <Switch>
+          <Route path="/jarntorget" component={Jarntorget} />
+        </Switch>
+        <Switch>
+          <Route path="/hisingen" component={Hisingen} />
+        </Switch>
 
-    ) 
+        <MainContent />
+      </div>
+    ); 
 }
 
 const rootStyle: CSSProperties = {
