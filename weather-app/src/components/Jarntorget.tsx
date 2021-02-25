@@ -2,10 +2,12 @@ import React, { CSSProperties } from 'react'
 
 const Jarntorget = () => {
     return (
-        <div style={rootStyle}>
-            <h1>Järntorget</h1>
-        </div>
-    )
+      <div>
+        <main style={rootStyle}>
+          <h1>Järntorget</h1>
+        </main>
+      </div>
+    );
 }
 
 export default Jarntorget

@@ -2,12 +2,12 @@ import React, { CSSProperties } from 'react'
 
 const Avenyn = () => {
     return (
-        <div>
-           <main style={rootStyle}>
-               <h1>Avenyn</h1>
-               </main> 
-        </div>
-    )
+      <div>
+        <main style={rootStyle}>
+          <h1>Avenyn</h1>
+        </main>
+      </div>
+    );
 }
 
 export default Avenyn

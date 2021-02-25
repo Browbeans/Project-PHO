@@ -18,11 +18,15 @@ interface Props{
 const MainContent: React.FC<Props> = ()  => {
     return (
       <div style={rootStyle}>
-        <Link to="/avenyn">
+        <Link to="/avenyn" style={{ textDecoration: "none" }}>
           <ContentItem title="Avenyn" image={imageAvenyn} />
         </Link>
-        <ContentItem title="Järntorget" image={imageJarntorget} />
-        <ContentItem title="Hisingen" image={imageHisingen} />
+        <Link to="/jarntorget" style={{ textDecoration: "none" }}>
+          <ContentItem title="Järntorget" image={imageJarntorget} />
+        </Link>
+        <Link to="/hisingen" style={{ textDecoration: "none" }}>
+          <ContentItem title="Hisingen" image={imageHisingen} />
+        </Link>
       </div>
     );
 }

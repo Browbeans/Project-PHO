@@ -2,10 +2,12 @@ import React, { CSSProperties } from 'react'
 
 const Hisingen = () => {
     return (
-        <div style={rootStyle}>
-            <h1>Hisingen</h1>
-        </div>
-    )
+      <div>
+        <main style={rootStyle}>
+          <h1>Hisingen</h1>
+        </main>
+      </div>
+    );
 }
 
 export default Hisingen
