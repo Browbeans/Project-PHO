@@ -11,16 +11,12 @@ function Layout() {
       <div style={rootStyle}>
         <NavBar />
         <Switch>
+          <Route path="/" exact component={MainContent}/>
           <Route path="/avenyn" component={Avenyn} />
-        </Switch>
-        <Switch>
           <Route path="/jarntorget" component={Jarntorget} />
-        </Switch>
-        <Switch>
           <Route path="/hisingen" component={Hisingen} />
         </Switch>
 
-        <MainContent />
       </div>
     ); 
 }
