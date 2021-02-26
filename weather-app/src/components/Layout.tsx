@@ -12,9 +12,8 @@ function Layout() {
 }
 
 const rootStyle: CSSProperties = {
-  height: "100vh",
+  minHeight: "100vh",
   background: "#f3cf7a",
-  overflow: "hidden",
   display: "flex",
   flexDirection: "column",
   flex: 1,

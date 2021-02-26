@@ -1,16 +1,17 @@
 import React, { CSSProperties } from 'react'; 
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
         <div style={rootStyle}>
-            <h1 style={textStyle}>Götebärs</h1>
+            <Link to="/" style={textStyle}>Götebärs</Link>
         </div>
     )
 }
 
 const rootStyle: CSSProperties = {
   width: "100%",
-  height: '10rem',
+  minHeight: '10vh',
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -18,7 +19,9 @@ const rootStyle: CSSProperties = {
 const textStyle: CSSProperties = {
   color: "black",
   fontSize: "3rem",
+  fontWeight: 'bold',
   textShadow: "1px 3px .1px #fff",
+  textDecoration: 'none'
 };
 
 export default NavBar; 

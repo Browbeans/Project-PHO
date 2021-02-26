@@ -3,22 +3,23 @@ import React, { CSSProperties } from 'react';
 
 
 interface Props {
-    image: string
-    title: string
+  id: string
 }
 
 function BarNavigation(props: Props) {
+    const imageSource = `../assets/${props.id}.jpg`;
+    console.log(imageSource)
     return(
         <div style={rootStyle}>
-            <h2 style={textStyle}>{props.title}</h2>
-            <img style={imgStyle} src={props.image} alt=""/>
+            <h2 style={textStyle}>{props.id}</h2>
+            <img style={imgStyle} src={imageSource} alt=""/>
         </div>
     )
 } 
 
 const rootStyle: CSSProperties = {
-    width: '15rem',
-    height: '15rem', 
+    width: '20rem',
+    height: '20rem', 
     display: 'flex', 
     flexDirection: 'column', 
     alignItems: 'center', 
@@ -39,7 +40,7 @@ const textStyle: CSSProperties = {
 
 const imgStyle: CSSProperties = {
     width: '100%',
-    height: '9rem'
+    height: '13.3rem'
 }
 
 export default BarNavigation; 

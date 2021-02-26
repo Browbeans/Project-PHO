@@ -14,9 +14,9 @@ function ContentItem(props: Props) {
 }
 
 const rootStyle: CSSProperties = {
-  width: "20rem",
+  width: "30rem",
   margin: "2rem",
-  height: "20rem",
+  height: "30rem",
   background: "#6e3b3b",
   borderRadius: "2rem",
   justifyContent: "space-between",
