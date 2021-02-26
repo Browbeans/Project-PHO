@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'; 
 import MainContent from './MainContent';
-import NavBar from './NavBar'
+import NavBar from './NavBar';
 
 function Layout() {
     return (
