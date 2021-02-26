@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react'; 
-import { displayPartsToString } from 'typescript';
+import { Link } from 'react-router-dom';
 import ContentItem from './ContentItem';
 
 const imageAvenyn =
@@ -16,13 +16,19 @@ interface Props{
 }
 
 const MainContent: React.FC<Props> = ()  => {
-    return(
-        <div style={rootStyle}>
-            <ContentItem title="Avenyn" image={imageAvenyn}/>
-            <ContentItem title="Järntorget" image={imageJarntorget}/>
-            <ContentItem title="Hisingen" image={imageHisingen}/>
-        </div>
-    )
+    return (
+      <div style={rootStyle}>
+        <Link to="/avenyn" style={{ textDecoration: "none" }}>
+          <ContentItem title="Avenyn" image={imageAvenyn} />
+        </Link>
+        <Link to="/jarntorget" style={{ textDecoration: "none" }}>
+          <ContentItem title="Järntorget" image={imageJarntorget} />
+        </Link>
+        <Link to="/hisingen" style={{ textDecoration: "none" }}>
+          <ContentItem title="Hisingen" image={imageHisingen} />
+        </Link>
+      </div>
+    );
 }
 
 const rootStyle: CSSProperties = {
