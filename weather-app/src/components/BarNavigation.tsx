@@ -1,5 +1,7 @@
   
 import React, { CSSProperties } from 'react'; 
+import { Link, Route, Switch } from 'react-router-dom';
+import BarItem from './BarItem';
 
 
 interface Props {
@@ -8,14 +10,23 @@ interface Props {
 
 function BarNavigation(props: Props) {
     const imageSource = `../assets/${props.id}.jpg`;
-    console.log(imageSource)
+
+    // const avenyBars = ['Yaki-Da', 'Lounge', 'Hard-Rock Cafe'];
+
+
     return(
-        <div style={rootStyle}>
-            <h2 style={textStyle}>{props.id}</h2>
-            <img style={imgStyle} src={imageSource} alt=""/>
-        </div>
+        <Switch>
+            <Link to={props.id}>
+                <div style={rootStyle}>
+                    <h2 style={textStyle}>{props.id}</h2>
+                    <img style={imgStyle} src={imageSource} alt=""/>
+                </div>
+            </Link>
+        </Switch>
     )
-} 
+
+
+}
 
 const rootStyle: CSSProperties = {
     width: '20rem',

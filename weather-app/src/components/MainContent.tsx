@@ -1,5 +1,7 @@
+import { ReactComponent } from '*.svg';
 import React, { CSSProperties } from 'react'; 
 import { Link, Route, Switch } from 'react-router-dom';
+import BarItem from './BarItem';
 import BarNavigation from './BarNavigation';
 import ContentItem from './ContentItem';
 
@@ -47,10 +49,82 @@ const imageJarntorget =
             <Route path="/avenyn">
                 {avenyn.map((value) => <BarNavigation id={value} key={value}/>)}
             </Route>
+            <Route path="/Yaki-da">
+                <BarItem id="Yaki-da" />
+            </Route>
+            <Route path="/Hardrock-cafe">
+                <BarItem id="Hardrock-cafe" />
+            </Route>
+            <Route path="/Lounge">
+                <BarItem id="Lounge" />
+            </Route>
+            <Route path="/Valand">
+                <BarItem id="Valand" />
+            </Route>
         </Switch>
       </div>
     );
 }
+
+// class MainContent extends React.Component<Props> {
+//   jarntorget: Array<string>
+//   hisingen: Array<string>
+//   avenyn: Array<string>
+
+//   constructor(props: Props) {
+//     super(props)
+//     this.state = {url:""}
+//     this.handleClick = this.handleClick.bind(this)
+//     this.jarntorget = ['Soho', 'Cafe-publik', 'Brygghuset', 'Hops'];
+//     this.hisingen = ['Ölstugan', 'Kville-Biljard', 'Antibarbarus', 'Lindholmen-Streetfood'];
+//     this.avenyn = ['Yaki-da', 'Hardrock-cafe', 'Lounge', 'Valand'];
+//   }
+
+//   handleClick() {
+//     return console.log("test")
+//   }
+
+//   render() {
+//     return(
+//     <div style={rootStyle}>
+//       <Switch>
+//           <Route exact path="/">
+//           <Link to="/avenyn" style={{ textDecoration: "none" }}>
+//             <ContentItem title="Avenyn" image={imageAvenyn} />
+//           </Link>
+//           <Link to="/jarntorget" style={{ textDecoration: "none" }}>
+//             <ContentItem title="Järntorget" image={imageJarntorget} />
+//           </Link>
+//           <Link to="/hisingen" style={{ textDecoration: "none" }}>
+//             <ContentItem title="Hisingen" image={imageHisingen} />
+//           </Link> 
+//           </Route>
+//           <Route path="/jarntorget">
+//               {this.jarntorget.map((value) => <BarNavigation id={value} key={value}/>)}
+//           </Route> 
+//           <Route path="/hisingen">
+//               {this.hisingen.map((value) => <BarNavigation id={value} key={value}/>)}
+//           </Route> 
+//           <Route path="/avenyn">
+//               {this.avenyn.map((value) => <BarNavigation id={value} key={value}/>)}
+//           </Route>
+//           <Route path="/Yaki-da">
+//               <BarItem id="Yaki-da"/>
+//           </Route>
+//           <Route path="/Hardrock-cafe">
+//               <BarItem id="Hardrock-cafe" onClick={this.handleClick}/>
+//           </Route>
+//           <Route path="/Lounge">
+//               <BarItem id="Lounge" />
+//           </Route>
+//           <Route path="/Valand">
+//               <BarItem id="Valand" />
+//           </Route>
+//       </Switch>
+//     </div>
+//     )
+//   }
+// }
 
 const rootStyle: CSSProperties = {
   display: "flex",
