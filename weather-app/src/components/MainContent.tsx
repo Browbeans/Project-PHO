@@ -4,30 +4,15 @@ import { Link, Route, Switch } from 'react-router-dom';
 import BarItem from './BarItem';
 import BarNavigation from './BarNavigation';
 import ContentItem from './ContentItem';
-
-// const imageAvenyn =
-//   "https://www.avenyn.se/wp-content/uploads/2016/11/avenyvandring700x350.jpg";
-
-//   const imageHisingen =
-//     "https://cached-images.bonnier.news/swift/bilder/epi-30-dn/UploadedImages/2016/3/29/283a28b8-4979-4d3b-9ebc-3b515b01299f/bigOriginal.jpg";
-
-// const imageJarntorget =
-//   "https://www.gp.se/image/policy:1.23707940:1581244196/image.jpg?f=Wide%26w=1200%26%24p%24f%24w=834285a";
-
-  interface Props{
-    
+  interface Props {
   }
 
 const MainContent: React.FC<Props> = ()  => {
-  
-  
-    // const jarntorget = ['Soho', 'Cafe-publik', 'Brygghuset', 'Hops']
-    // const hisingen = ['Ölstugan', 'Kville-Biljard', 'Antibarbarus', 'Lindholmen-Streetfood']
 
 const data = [
   {
-    Area: 'Avenyn', 
-    Bar: [
+      Area: 'Avenyn', 
+      Bar: [
         {
           title: 'Yaki-da', 
           image: '', 
@@ -49,27 +34,27 @@ const data = [
           info: 'fdsfsdfsdfsdfsdfsdf'
         },
       ], 
-  }, 
+  },
   {
     Area: 'Hisingen', 
     Bar: [
       {
-        title: 'Tullen', 
+        title: 'Ölstugan', 
         image: '', 
         info: 'fdsfsdfsdfsdfsdfsdf'
       }, 
       {
-        title: 'Streetfood', 
+        title: 'Lindholmen-streetfood', 
         image: '', 
         info: 'fdsfsdfsdfsdfsdfsdf'
       }, 
       {
-        title: 'annat', 
+        title: 'Antibarbarus', 
         image: '', 
         info: 'fdsfsdfsdfsdfsdfsdf'
       },
       {
-        title: 'Valand', 
+        title: 'Kville-biljard', 
         image: '', 
         info: 'fdsfsdfsdfsdfsdfsdf'
       },
@@ -79,119 +64,84 @@ const data = [
     Area: 'Järntorget', 
     Bar: [
       {
-        title: 'hisingen', 
+        title: 'Soho', 
         image: '', 
         info: 'fdsfsdfsdfsdfsdfsdf'
       }, 
       {
-        title: 'Lounge', 
+        title: 'Brygghuset', 
         image: '', 
         info: 'fdsfsdfsdfsdfsdfsdf'
       }, 
       {
-        title: 'Hardrock-cafe', 
+        title: 'Cafe-publik', 
         image: '', 
         info: 'fdsfsdfsdfsdfsdfsdf'
       },
       {
-        title: 'Valand', 
+        title: 'Hops', 
         image: '', 
         info: 'fdsfsdfsdfsdfsdfsdf'
       },
     ],
   }
-
 ]
 
 
-    const avenyn = [ 
-      {
-      title: 'Yaki-da', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-    {
-      title: 'Lounge', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-    {
-      title: 'Valand', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-    {
-      title: 'Hardrock-cafe', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-  ]
-    const jarntorget = [ {
-      title: 'Soho', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-    {
-      title: 'Cafe-publik', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-    {
-      title: 'Brygghuset', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-    {
-      title: 'Hops', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-  ]
-    const hisingen = [ {
-      title: 'Ölstugan', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-    {
-      title: 'Kville-biljard', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-    {
-      title: 'Antibarbarus', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-    {
-      title: 'Lindholmen-streetfood', 
-      image: '',
-      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    },
-  ]
-
   const test = data.map((value) => value.Bar)
-  const test2 = test.map((fsdf) => fsdf.map)
-  console.log()
+  
+  // function fartMan() {
+  //   for(let i = 0; i < test.length; i++) {
+  //       test[i].map((value) => console.log(value.title))
+  //   }
+  // }
 
+  // function fartMan() {
+  //   for(let i = 0; i < test.length; i++) {
+  //       test[i].map((value) => <BarNavigation id={value.title} key={value.title}/>)
+  //   }
+  // }
+  const bars: any = []
+  
+  const arrayPush =  () => {
+    for(let i = 0; i < test.length; i++) {
+      test[i].map((value) => bars.push(value.title))
+    }
+  }
+    
     return (
       <div style={rootStyle}>
         <Switch>
-            <Route exact path="/">
-              
+            <Route exact path="/"> 
               {data.map((value) => 
                   <ContentItem title={value.Area} key={value.Area}/>
               )}
             </Route>
-            
-            {/* {data.map((value) => 
-              <Route path={'/' + value.area}>
-                <BarNavigation id={value.area} key={value.area}/>
+             {data.map((value) => 
+              <Route path={'/' + value.Area}>
+                {arrayPush()}
+                {bars.map((value: string) => <BarNavigation id={value} key={value}/>)}
               </Route>
-            )} */}
-                
+            )} 
+        </Switch>
+      </div>
+    );
+}
 
 
-            <Route path="/järntorget">
+const rootStyle: CSSProperties = {
+  display: "flex",
+  flexWrap: "wrap",
+  minHeight: '90vh',
+  justifyContent: "space-around",
+  alignItems: "center",
+};
+
+
+export default MainContent; 
+
+
+ {/* <Route path="/järntorget">
                 {jarntorget.map((value) => <BarNavigation id={value.title} key={value.title}/>)}
             </Route> 
             <Route path="/hisingen">
@@ -217,12 +167,7 @@ const data = [
               <Route path={'/' + value.title}>
                 <BarItem bar={value} />
               </Route>
-            )}
-        </Switch>
-      </div>
-    );
-}
-
+            )} */}
 // class MainContent extends React.Component<Props> {
 //   jarntorget: Array<string>
 //   hisingen: Array<string>
@@ -282,14 +227,3 @@ const data = [
 //     )
 //   }
 // }
-
-const rootStyle: CSSProperties = {
-  display: "flex",
-  flexWrap: "wrap",
-  minHeight: '90vh',
-  justifyContent: "space-around",
-  alignItems: "center",
-};
-
-
-export default MainContent; 
