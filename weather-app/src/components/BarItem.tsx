@@ -1,13 +1,18 @@
 import React, { CSSProperties } from 'react';
 
 interface Props {
-    id: string
+    bar: {
+        title: string, 
+        image: string, 
+        info: string
+    }
 }
+
 
 export default function BarItem(props: Props) {
     return (
         <div style={styleContainer}>
-            <p>{props.id}</p>
+            <h1>{props.bar.title}</h1>
             {/* <p>test</p> */}
         </div>
     );

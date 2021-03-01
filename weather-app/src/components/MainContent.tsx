@@ -25,6 +25,11 @@ const imageJarntorget =
     const hisingen = ['Ölstugan', 'Kville-Biljard', 'Antibarbarus', 'Lindholmen-Streetfood']
     const avenyn = ['Yaki-da', 'Hardrock-cafe', 'Lounge', 'Valand']
 
+    const yakiDa = {
+      title: 'Yaki-da', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    }
 
     return (
       <div style={rootStyle}>
@@ -50,9 +55,9 @@ const imageJarntorget =
                 {avenyn.map((value) => <BarNavigation id={value} key={value}/>)}
             </Route>
             <Route path="/Yaki-da">
-                <BarItem id="Yaki-da" />
+                <BarItem bar={yakiDa} />
             </Route>
-            <Route path="/Hardrock-cafe">
+            {/* <Route path="/Hardrock-cafe">
                 <BarItem id="Hardrock-cafe" />
             </Route>
             <Route path="/Lounge">
@@ -60,7 +65,7 @@ const imageJarntorget =
             </Route>
             <Route path="/Valand">
                 <BarItem id="Valand" />
-            </Route>
+            </Route> */}
         </Switch>
       </div>
     );
