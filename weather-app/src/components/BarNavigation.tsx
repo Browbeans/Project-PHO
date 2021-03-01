@@ -15,14 +15,12 @@ function BarNavigation(props: Props) {
 
 
     return(
-        <Switch>
             <Link to={props.id}>
                 <div style={rootStyle}>
                     <h2 style={textStyle}>{props.id}</h2>
                     <img style={imgStyle} src={imageSource} alt=""/>
                 </div>
             </Link>
-        </Switch>
     )
 
 

@@ -1,18 +1,23 @@
 import React, { CSSProperties } from 'react';
 
 interface Props {
-    id: string
+    bar: {
+        title: string, 
+        image: string, 
+        info: string
+    }
 }
+
 
 export default function BarItem(props: Props) {
     return (
         <div style={styleContainer}>
             <div>
-                <h2>{props.id}</h2>
+                <h2>{props.bar.title}</h2>
             </div>
             <div style={flexRow}>
                 <div style={textContainer}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia eligendi minima reprehenderit est vel quidem quisquam totam dolor similique odio architecto impedit molestiae et cupiditate quaerat rem sunt vero, maxime iusto tempora saepe velit quos consequuntur itaque! Asperiores, aliquam! Aliquid!</p>
+                    <p>{props.bar.info}</p>
                 </div>
                 <div style={rightContainer}>
                     <div style={imageStyle}>
