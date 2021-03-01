@@ -17,21 +17,95 @@ import ContentItem from './ContentItem';
   interface Props{
     
   }
-  
-  const MainContent: React.FC<Props> = ()  => {
+
+const MainContent: React.FC<Props> = ()  => {
   
   
     // const jarntorget = ['Soho', 'Cafe-publik', 'Brygghuset', 'Hops']
     // const hisingen = ['Ölstugan', 'Kville-Biljard', 'Antibarbarus', 'Lindholmen-Streetfood']
 
-    const data = [
-      {area: 'Avenyn'}, 
-      {area: 'Järntorget'},
-      {area: 'Hisingen'}
-    ]
+const data = [
+  {
+    Area: 'Avenyn', 
+    Bar: [
+        {
+          title: 'Yaki-da', 
+          image: '', 
+          info: 'fdsfsdfsdfsdfsdfsdf'
+        }, 
+        {
+          title: 'Lounge', 
+          image: '', 
+          info: 'fdsfsdfsdfsdfsdfsdf'
+        }, 
+        {
+          title: 'Hardrock-cafe', 
+          image: '', 
+          info: 'fdsfsdfsdfsdfsdfsdf'
+        },
+        {
+          title: 'Valand', 
+          image: '', 
+          info: 'fdsfsdfsdfsdfsdfsdf'
+        },
+      ], 
+  }, 
+  {
+    Area: 'Hisingen', 
+    Bar: [
+      {
+        title: 'Tullen', 
+        image: '', 
+        info: 'fdsfsdfsdfsdfsdfsdf'
+      }, 
+      {
+        title: 'Streetfood', 
+        image: '', 
+        info: 'fdsfsdfsdfsdfsdfsdf'
+      }, 
+      {
+        title: 'annat', 
+        image: '', 
+        info: 'fdsfsdfsdfsdfsdfsdf'
+      },
+      {
+        title: 'Valand', 
+        image: '', 
+        info: 'fdsfsdfsdfsdfsdfsdf'
+      },
+    ],
+  },
+  {
+    Area: 'Järntorget', 
+    Bar: [
+      {
+        title: 'hisingen', 
+        image: '', 
+        info: 'fdsfsdfsdfsdfsdfsdf'
+      }, 
+      {
+        title: 'Lounge', 
+        image: '', 
+        info: 'fdsfsdfsdfsdfsdfsdf'
+      }, 
+      {
+        title: 'Hardrock-cafe', 
+        image: '', 
+        info: 'fdsfsdfsdfsdfsdfsdf'
+      },
+      {
+        title: 'Valand', 
+        image: '', 
+        info: 'fdsfsdfsdfsdfsdfsdf'
+      },
+    ],
+  }
+
+]
 
 
-    const avenyn = [ {
+    const avenyn = [ 
+      {
       title: 'Yaki-da', 
       image: '',
       info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
@@ -95,12 +169,17 @@ import ContentItem from './ContentItem';
     },
   ]
 
+  const test = data.map((value) => value.Bar)
+  const test2 = test.map((fsdf) => fsdf.map)
+  console.log()
+
     return (
       <div style={rootStyle}>
         <Switch>
             <Route exact path="/">
+              
               {data.map((value) => 
-                  <ContentItem title={value.area} key={value.area}/>
+                  <ContentItem title={value.Area} key={value.Area}/>
               )}
             </Route>
             
