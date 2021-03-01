@@ -13,7 +13,7 @@ export default function BarItem(props: Props) {
     return (
         <div style={styleContainer}>
             <h1>{props.bar.title}</h1>
-            {/* <p>test</p> */}
+             <p>{props.bar.info}</p>
         </div>
     );
 }

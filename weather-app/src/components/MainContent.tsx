@@ -21,51 +21,113 @@ const imageJarntorget =
   const MainContent: React.FC<Props> = ()  => {
   
   
-    const jarntorget = ['Soho', 'Cafe-publik', 'Brygghuset', 'Hops']
-    const hisingen = ['Ölstugan', 'Kville-Biljard', 'Antibarbarus', 'Lindholmen-Streetfood']
-    const avenyn = ['Yaki-da', 'Hardrock-cafe', 'Lounge', 'Valand']
-
-    const yakiDa = {
+    // const jarntorget = ['Soho', 'Cafe-publik', 'Brygghuset', 'Hops']
+    // const hisingen = ['Ölstugan', 'Kville-Biljard', 'Antibarbarus', 'Lindholmen-Streetfood']
+    const avenyn = [ {
       title: 'Yaki-da', 
       image: '',
       info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
-    }
+    },
+    {
+      title: 'Lounge', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+    {
+      title: 'Valand', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+    {
+      title: 'Hardrock-cafe', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+  ]
+    const jarntorget = [ {
+      title: 'Soho', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+    {
+      title: 'Cafe-publik', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+    {
+      title: 'Brygghuset', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+    {
+      title: 'Hops', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+  ]
+    const hisingen = [ {
+      title: 'Ölstugan', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+    {
+      title: 'Kville-biljard', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+    {
+      title: 'Antibarbarus', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+    {
+      title: 'Lindholmen-streetfood', 
+      image: '',
+      info: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad excepturi vero accusamus harum labore itaque dicta cupiditate incidunt. Nisi repellat mollitia eligendi veniam saepe labore est! Voluptatibus officia saepe quidem!'
+    },
+  ]
 
     return (
       <div style={rootStyle}>
         <Switch>
             <Route exact path="/">
-            <Link to="/avenyn" style={{ textDecoration: "none" }}>
-              <ContentItem title="Avenyn" image={imageAvenyn} />
-            </Link>
-            <Link to="/jarntorget" style={{ textDecoration: "none" }}>
-              <ContentItem title="Järntorget" image={imageJarntorget} />
-            </Link>
-            <Link to="/hisingen" style={{ textDecoration: "none" }}>
-              <ContentItem title="Hisingen" image={imageHisingen} />
-            </Link> 
+              <Link to="/avenyn" style={{ textDecoration: "none" }}>
+                <ContentItem title="Avenyn" image={imageAvenyn} />
+              </Link>
+              <Link to="/jarntorget" style={{ textDecoration: "none" }}>
+                <ContentItem title="Järntorget" image={imageJarntorget} />
+              </Link>
+              <Link to="/hisingen" style={{ textDecoration: "none" }}>
+                <ContentItem title="Hisingen" image={imageHisingen} />
+              </Link> 
             </Route>
             <Route path="/jarntorget">
-                {jarntorget.map((value) => <BarNavigation id={value} key={value}/>)}
+                {jarntorget.map((value) => <BarNavigation id={value.title} key={value.title}/>)}
             </Route> 
             <Route path="/hisingen">
-                {hisingen.map((value) => <BarNavigation id={value} key={value}/>)}
+                {hisingen.map((value) => <BarNavigation id={value.title} key={value.title}/>)}
             </Route> 
             <Route path="/avenyn">
-                {avenyn.map((value) => <BarNavigation id={value} key={value}/>)}
+                {avenyn.map((value) => <BarNavigation id={value.title} key={value.title}/>)}
             </Route>
-            <Route path="/Yaki-da">
-                <BarItem bar={yakiDa} />
-            </Route>
-            {/* <Route path="/Hardrock-cafe">
-                <BarItem id="Hardrock-cafe" />
-            </Route>
-            <Route path="/Lounge">
-                <BarItem id="Lounge" />
-            </Route>
-            <Route path="/Valand">
-                <BarItem id="Valand" />
-            </Route> */}
+            
+            {avenyn.map((value) => 
+              <Route path={'/' + value.title}>
+                <BarItem bar={value} />
+              </Route>
+            )}
+
+            {jarntorget.map((value) => 
+              <Route path={'/' + value.title}>
+                <BarItem bar={value} />
+              </Route>
+            )}
+
+            {hisingen.map((value) => 
+              <Route path={'/' + value.title}>
+                <BarItem bar={value} />
+              </Route>
+            )}
         </Switch>
       </div>
     );
