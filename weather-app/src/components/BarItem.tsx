@@ -8,7 +8,7 @@ export default function BarItem(props: Props) {
     return (
         <div style={styleContainer}>
             <div>
-                <h3>{props.id}</h3>
+                <h2>{props.id}</h2>
             </div>
             <div style={flexRow}>
                 <div style={textContainer}>
@@ -46,7 +46,8 @@ const imageStyle: CSSProperties = {
 const mapStyle: CSSProperties = {
     width: '15rem',
     height: '15rem',
-    background: 'red'
+    background: 'red',
+    marginBottom: '2rem'
 }
 
 const rightContainer: CSSProperties = {
@@ -60,11 +61,13 @@ const rightContainer: CSSProperties = {
 const flexRow: CSSProperties = {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-around',
     width: '80%',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    marginTop: '2rem'
 }
 
 const textContainer: CSSProperties = {
     width: '20rem',
-    margin: '2rem auto'
+    marginBottom: '2rem'
 }
