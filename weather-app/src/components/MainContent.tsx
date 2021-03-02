@@ -4,6 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import BarItem from './BarItem';
 import BarNavigation from './BarNavigation';
 import ContentItem from './ContentItem';
+import ErrorBoundary from './ErrorBoundary';
 
 interface Props{
     
@@ -107,39 +108,45 @@ interface Props{
     return (
       <div style={rootStyle}>
         <Switch>
-            <Route exact path="/">
-              {data.map((value) => 
-                  <ContentItem title={value.area} key={value.area}/>
-              )}
+          <Route exact path="/">
+            {data.map((value) => (
+              <ContentItem title={value.area} key={value.area} />
+            ))}
+          </Route>
+
+          <Route path="/järntorget">
+              {jarntorget.map((value) => (
+                <BarNavigation id={value.title} key={value.title} />
+              ))}   
+          </Route>
+          <Route path="/hisingen">
+            {hisingen.map((value) => (
+              <BarNavigation id={value.title} key={value.title} />
+            ))}
+          </Route>
+          <Route path="/avenyn">
+            {avenyn.map((value) => (
+              <BarNavigation id={value.title} key={value.title} />
+            ))}
+          </Route>
+
+          {avenyn.map((value) => (
+            <Route path={"/" + value.title}>
+              <BarItem bar={value} id={value.image} />
             </Route>
-                
-            <Route path="/järntorget">
-                {jarntorget.map((value) => <BarNavigation id={value.title} key={value.title}/>)}
-            </Route> 
-            <Route path="/hisingen">
-                {hisingen.map((value) => <BarNavigation id={value.title} key={value.title}/>)}
-            </Route> 
-            <Route path="/avenyn">
-                {avenyn.map((value) => <BarNavigation id={value.title} key={value.title}/>)}
+          ))}
+
+          {jarntorget.map((value) => (
+            <Route path={"/" + value.title}>
+              <BarItem bar={value} id={value.image} />
             </Route>
+          ))}
 
-            {avenyn.map((value) => 
-              <Route path={'/' + value.title}>
-                <BarItem bar={value} id={value.image} />
-              </Route>
-            )}
-
-            {jarntorget.map((value) => 
-              <Route path={'/' + value.title}>
-                <BarItem bar={value} id={value.image}/>
-              </Route>
-            )}
-
-            {hisingen.map((value) => 
-              <Route path={'/' + value.title}>
-                <BarItem bar={value} id={value.image}/>
-              </Route>
-            )}
+          {hisingen.map((value) => (
+            <Route path={"/" + value.title}>
+              <BarItem bar={value} id={value.image} />
+            </Route>
+          ))}
         </Switch>
       </div>
     );
