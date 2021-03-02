@@ -1,10 +1,12 @@
 import React, { CSSProperties } from 'react';
-
+import Map from './Map'
 interface Props {
     bar: {
-        title: string, 
-        image: string, 
+        title: string 
+        image: string
         info: string
+        lat: number
+        lng: number
     }
 }
 
@@ -24,7 +26,7 @@ export default function BarItem(props: Props) {
 
                     </div>
                     <div style={mapStyle}>
-
+                        <Map bar={props.bar}/>
                     </div>
                 </div>
             </div>
@@ -51,7 +53,6 @@ const imageStyle: CSSProperties = {
 const mapStyle: CSSProperties = {
     width: '15rem',
     height: '15rem',
-    background: 'red',
     marginBottom: '2rem'
 }
 
