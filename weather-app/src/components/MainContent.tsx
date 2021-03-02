@@ -4,6 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import BarItem from './BarItem';
 import BarNavigation from './BarNavigation';
 import ContentItem from './ContentItem';
+
 interface Props{
     
 }
@@ -95,8 +96,8 @@ interface Props{
       lng: 11.94487981636305
     },
     {
-      title: 'Lindholmen-streetfood', 
-      image: '',
+      title: 'Lindholmen-Market', 
+      image: '../assets/{Lindholmen-streetfood.jpg}',
       info: 'Gatumat, och det är ganska exakt vad det är! Enkelt & gott, opretentiöst men med krav på kvalité och viljan att vara gatusmart kombinerad med en inbjudande attityd! Det som binder oss samman är kärleken till maten, kvalitén i råvarorna och människorna som äter den! Bärs i mängder',
       lat: 57.708675696526086, 
       lng: 11.945752897853069
@@ -124,19 +125,19 @@ interface Props{
 
             {avenyn.map((value) => 
               <Route path={'/' + value.title}>
-                <BarItem bar={value} />
+                <BarItem bar={value} id={value.image} />
               </Route>
             )}
 
             {jarntorget.map((value) => 
               <Route path={'/' + value.title}>
-                <BarItem bar={value} />
+                <BarItem bar={value} id={value.image}/>
               </Route>
             )}
 
             {hisingen.map((value) => 
               <Route path={'/' + value.title}>
-                <BarItem bar={value} />
+                <BarItem bar={value} id={value.image}/>
               </Route>
             )}
         </Switch>

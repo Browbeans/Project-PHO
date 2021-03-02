@@ -8,7 +8,7 @@ function ContentItem(props: Props) {
   const imageSource = `../assets/${props.title}.jpg`;
 
     return (
-      <Link to={props.title}>
+      <Link to={props.title} style={{ textDecoration: 'none' }}>
 
       <div style={rootStyle}>
         <h2 style={textStyle}>{props.title}</h2>
@@ -20,7 +20,7 @@ function ContentItem(props: Props) {
 
 const rootStyle: CSSProperties = {
   width: "30rem",
-  margin: "2rem",
+  margin: "2rem 0rem",
   height: "30rem",
   background: "#6e3b3b",
   borderRadius: "2rem",
