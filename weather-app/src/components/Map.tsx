@@ -13,7 +13,7 @@ interface Props {
 function Map (props: Props) {
     const width = 200
     const height = 150
-    const zoom = 15
+    const zoom = 16
     const token = 'pk.eyJ1IjoiYnJvd2JlYW5zIiwiYSI6ImNrbDIybGQ2ZzBtZ2UyeW80cjhpcjcycTgifQ.Q6gkFkBhlqFEKapZic4Fjw'
 
     return(
