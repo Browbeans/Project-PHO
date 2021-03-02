@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react'; 
+import ErrorBoundary from './ErrorBoundary';
 import MainContent from './MainContent';
 import NavBar from './NavBar';
 
@@ -6,7 +7,9 @@ function Layout() {
     return (
       <div style={rootStyle}>
         <NavBar />
-        <MainContent/>
+        <ErrorBoundary >
+          <MainContent/>
+        </ErrorBoundary>
       </div>
     ); 
 }
