@@ -9,7 +9,6 @@ function ContentItem(props: Props) {
 
     return (
       <Link to={props.title}>
-
       <div style={rootStyle}>
         <h2 style={textStyle}>{props.title}</h2>
         <img style={imageStyle} src={imageSource} alt="" />

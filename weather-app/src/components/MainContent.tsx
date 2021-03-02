@@ -1,5 +1,5 @@
 import { ReactComponent } from '*.svg';
-import React, { CSSProperties } from 'react'; 
+import React, { CSSProperties, useDebugValue } from 'react'; 
 import { Link, Route, Switch } from 'react-router-dom';
 import BarItem from './BarItem';
 import BarNavigation from './BarNavigation';
@@ -88,19 +88,18 @@ const data = [
 ]
 
 
-  const test = data.map((value) => value.Bar)
-  
-  // function fartMan() {
-  //   for(let i = 0; i < test.length; i++) {
-  //       test[i].map((value) => console.log(value.title))
-  //   }
-  // }
+// function fartMan() {
+//   for(let i = 0; i < test.length; i++) {
+//       test[i].map((value) => console.log(value.title))
+//   }
+// }
 
-  // function fartMan() {
-  //   for(let i = 0; i < test.length; i++) {
-  //       test[i].map((value) => <BarNavigation id={value.title} key={value.title}/>)
-  //   }
-  // }
+// function fartMan() {
+//   for(let i = 0; i < test.length; i++) {
+//       test[i].map((value) => <BarNavigation id={value.title} key={value.title}/>)
+//   }
+// }
+  const test = data.map((value) => value.Bar)
   const bars: any = []
   
   const arrayPush =  () => {
@@ -108,7 +107,7 @@ const data = [
       test[i].map((value) => bars.push(value.title))
     }
   }
-    
+    arrayPush()
     return (
       <div style={rootStyle}>
         <Switch>
@@ -119,7 +118,6 @@ const data = [
             </Route>
              {data.map((value) => 
               <Route path={'/' + value.Area}>
-                {arrayPush()}
                 {bars.map((value: string) => <BarNavigation id={value} key={value}/>)}
               </Route>
             )} 
