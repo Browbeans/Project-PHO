@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react';
-import Map from './Map'
+import Map from './Map';
+
 interface Props {
     bar: {
         title: string 
@@ -8,10 +9,16 @@ interface Props {
         lat: number
         lng: number
     }
+
+    id: string
 }
 
 
 export default function BarItem(props: Props) {
+    const imageSource = `../assets/${props.bar.title}.jpg`;
+
+    console.log(props.bar.title)
+
     return (
         <div style={styleContainer}>
             <div>
@@ -23,7 +30,7 @@ export default function BarItem(props: Props) {
                 </div>
                 <div style={rightContainer}>
                     <div style={imageStyle}>
-
+                        <img style={imageStyle} src={imageSource} alt=""/>
                     </div>
                     <div style={mapStyle}>
                         <Map bar={props.bar}/>
@@ -44,15 +51,12 @@ const styleContainer: CSSProperties = {
 }
 
 const imageStyle: CSSProperties = {
-    width: '15rem',
+    width: '25rem',
     height: '15rem',
-    background: 'blue',
     marginBottom: '2rem'
 }
 
 const mapStyle: CSSProperties = {
-    width: '15rem',
-    height: '15rem',
     marginBottom: '2rem'
 }
 
@@ -74,6 +78,9 @@ const flexRow: CSSProperties = {
 }
 
 const textContainer: CSSProperties = {
-    width: '20rem',
-    marginBottom: '2rem'
+    width: '25rem',
+    marginBottom: '2rem',
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: '1.2rem'
 }

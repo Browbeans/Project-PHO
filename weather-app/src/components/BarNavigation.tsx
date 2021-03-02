@@ -15,15 +15,13 @@ function BarNavigation(props: Props) {
 
 
     return(
-            <Link to={props.id}>
+            <Link to={props.id} style={{ textDecoration: 'none' }}>
                 <div style={rootStyle}>
                     <h2 style={textStyle}>{props.id}</h2>
                     <img style={imgStyle} src={imageSource} alt=""/>
                 </div>
             </Link>
     )
-
-
 }
 
 const rootStyle: CSSProperties = {
@@ -44,7 +42,7 @@ const rootStyle: CSSProperties = {
 const textStyle: CSSProperties = {
     color: '#f3cf7a', 
     textShadow: '1px 1px .1px #ac3f21', 
-    fontSize: '2rem'
+    fontSize: '1.8rem',
 }
 
 const imgStyle: CSSProperties = {
