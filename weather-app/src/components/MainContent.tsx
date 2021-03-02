@@ -116,7 +116,7 @@ interface Props{
 
           <Route path="/järntorget">
               {jarntorget.map((value) => (
-                <BarNavigation id={value.title} key={value.title} />
+                  <BarNavigation id={value.title} key={value.title} />
               ))}   
           </Route>
           <Route path="/hisingen">
@@ -124,6 +124,7 @@ interface Props{
               <BarNavigation id={value.title} key={value.title} />
             ))}
           </Route>
+
           <Route path="/avenyn">
             {avenyn.map((value) => (
               <BarNavigation id={value.title} key={value.title} />
@@ -144,7 +145,7 @@ interface Props{
 
           {hisingen.map((value) => (
             <Route path={"/" + value.title}>
-              <BarItem bar={value} id={value.image} />
+                <BarItem bar={value} id={value.image} />
             </Route>
           ))}
         </Switch>

@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react';
+import ErrorBoundary from './ErrorBoundary';
 import Map from './Map';
 
 interface Props {
@@ -18,7 +19,6 @@ export default function BarItem(props: Props) {
     const imageSource = `../assets/${props.bar.title}.jpg`;
 
     console.log(props.bar.title)
-
     return (
         <div style={styleContainer}>
             <div>
@@ -33,7 +33,9 @@ export default function BarItem(props: Props) {
                         <img style={imageStyle} src={imageSource} alt=""/>
                     </div>
                     <div style={mapStyle}>
-                        <Map bar={props.bar}/>
+                        <ErrorBoundary>
+                            <Map bar={props.bar}/>
+                        </ErrorBoundary>
                     </div>
                 </div>
             </div>

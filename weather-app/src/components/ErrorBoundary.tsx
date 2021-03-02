@@ -31,14 +31,11 @@ export default class ErrorBoundary extends Component<Props, State> {
 }
 
 const errorStyle: CSSProperties = {
-  width: "100%",
-  minHeight: "100vh",
-  fontSize: "3rem",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  color: "black",
-  background: "#f3cf7a",
-  fontWeight: "bold",
-  textShadow: "1px 3px .1px #fff",
+  background: 'white',
+  width: '100%',
+  height: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center'
 };

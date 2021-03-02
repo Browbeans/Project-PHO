@@ -1,21 +1,23 @@
 import React, { CSSProperties } from 'react'; 
 import { Link } from 'react-router-dom';
+import ErrorBoundary from './ErrorBoundary';
 
 interface Props {
   title: string;
 }
 function ContentItem(props: Props) {
   const imageSource = `../assets/${props.title}.jpg`;
-
-    return (
-      <Link to={props.title} style={{ textDecoration: 'none' }}>
-
+ 
+return (
+  <ErrorBoundary>
+    <Link to={props.title} style={{ textDecoration: 'none' }}>
       <div style={rootStyle}>
         <h2 style={textStyle}>{props.title}</h2>
         <img style={imageStyle} src={imageSource} alt="" />
       </div>
-      </Link>
-    );
+    </Link>
+  </ErrorBoundary>
+);
 }
 
 const rootStyle: CSSProperties = {
