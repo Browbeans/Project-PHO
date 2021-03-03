@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import Map from './Map';
+import Recension from './Recension';
 
 interface Props {
     bar: {
@@ -20,26 +21,30 @@ export default function BarItem(props: Props) {
 
     console.log(props.bar.title)
     return (
-        <div style={styleContainer}>
-            <div>
-                <h2>{props.bar.title}</h2>
-            </div>
-            <div style={flexRow}>
-                <div style={textContainer}>
-                    <p>{props.bar.info}</p>
-                </div>
-                <div style={rightContainer}>
-                    <div style={imageStyle}>
-                        <img style={imageStyle} src={imageSource} alt=""/>
-                    </div>
-                    <div style={mapStyle}>
-                        <ErrorBoundary>
-                            <Map bar={props.bar}/>
-                        </ErrorBoundary>
-                    </div>
-                </div>
-            </div>
+      <div style={styleContainer}>
+        <div>
+          <h2>{props.bar.title}</h2>
         </div>
+        <div style={flexRow}>
+          <div style={textContainer}>
+            <div style={flexColumn}>
+              <p>{props.bar.info}</p>
+              <Recension />
+            </div>
+          </div>
+
+          <div style={rightContainer}>
+            <div style={imageStyle}>
+              <img style={imageStyle} src={imageSource} alt="" />
+            </div>
+            <div style={mapStyle}>
+              <ErrorBoundary>
+                <Map bar={props.bar} />
+              </ErrorBoundary>
+            </div>
+          </div>
+        </div>
+      </div>
     );
 }
 
@@ -85,4 +90,9 @@ const textContainer: CSSProperties = {
     display: 'flex',
     alignItems: 'center',
     fontSize: '1.2rem'
+}
+
+const flexColumn: CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
 }
