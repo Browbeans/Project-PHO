@@ -9,10 +9,21 @@ import ContentItem from './ContentItem';
 
 const MainContent: React.FC<Props> = ()  => {
 
-const data = [
+interface Area {
+  name: string;
+  bars: Bar[];
+}
+
+interface Bar {
+  title: string,
+  image: string,
+  info: string,
+}
+
+const areas: Area[] = [
   {
-      Area: 'Avenyn', 
-      Bar: [
+      name: 'Avenyn', 
+      bars: [
         {
           title: 'Yaki-da', 
           image: '', 
@@ -36,8 +47,8 @@ const data = [
       ], 
   },
   {
-    Area: 'Hisingen', 
-    Bar: [
+    name: 'Hisingen', 
+    bars: [
       {
         title: 'Ölstugan', 
         image: '', 
@@ -61,8 +72,8 @@ const data = [
     ],
   },
   {
-    Area: 'Järntorget', 
-    Bar: [
+    name: 'Järntorget', 
+    bars: [
       {
         title: 'Soho', 
         image: '', 
@@ -87,43 +98,22 @@ const data = [
   }
 ]
 
-
-// function fartMan() {
-//   for(let i = 0; i < test.length; i++) {
-//       test[i].map((value) => console.log(value.title))
-//   }
-// }
-
-// function fartMan() {
-//   for(let i = 0; i < test.length; i++) {
-//       test[i].map((value) => <BarNavigation id={value.title} key={value.title}/>)
-//   }
-// }
-  const test = data.map((value) => value.Bar)
-  const bars: any = []
-  
-  const arrayPush =  () => {
-    for(let i = 0; i < test.length; i++) {
-      test[i].map((value) => bars.push(value.title))
-    }
-  }
-    arrayPush()
-    return (
-      <div style={rootStyle}>
-        <Switch>
-            <Route exact path="/"> 
-              {data.map((value) => 
-                  <ContentItem title={value.Area} key={value.Area}/>
-              )}
+  return (
+    <div style={rootStyle}>
+      <Switch>
+          <Route exact path="/"> 
+            {areas.map((area) => 
+                <ContentItem title={area.name} key={area.name}/>
+            )}
+          </Route>
+          {areas.map((area) => 
+            <Route key={area.name} path={'/' + area.name}>
+              {area.bars.map((bar) => <BarNavigation id={bar.title} key={bar.title}/>)}
             </Route>
-             {data.map((value) => 
-              <Route path={'/' + value.Area}>
-                {bars.map((value: string) => <BarNavigation id={value} key={value}/>)}
-              </Route>
-            )} 
-        </Switch>
-      </div>
-    );
+          )} 
+      </Switch>
+    </div>
+  );
 }
 
 
