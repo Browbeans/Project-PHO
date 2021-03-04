@@ -3,6 +3,7 @@ import React, { CSSProperties } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import BarItem from './BarItem';
 import ErrorBoundary from './ErrorBoundary';
+import Like from './Like';
 
 
 interface Props {
@@ -13,19 +14,20 @@ function BarNavigation(props: Props) {
     const imageSource = `../assets/${props.id}.jpg`;
     return(
         <ErrorBoundary>
-            <Link to={props.id} style={{ textDecoration: 'none' }}>
-                <div style={rootStyle}>
+            <div style={rootStyle}>
+                <Link to={props.id} style={{ textDecoration: 'none' }}>
                     <h2 style={textStyle}>{props.id}</h2>
                     <img style={imgStyle} src={imageSource} alt=""/>
-                </div>
-            </Link>
+                </Link>
+                <Like/> 
+            </div>
         </ErrorBoundary>
     )
 }
 
 const rootStyle: CSSProperties = {
     width: '20rem',
-    height: '20rem', 
+    height: '23rem', 
     display: 'flex', 
     flexDirection: 'column', 
     alignItems: 'center', 
@@ -42,11 +44,13 @@ const textStyle: CSSProperties = {
     color: '#f3cf7a', 
     textShadow: '1px 1px .1px #ac3f21', 
     fontSize: '1.8rem',
+    textAlign: 'center'
 }
 
 const imgStyle: CSSProperties = {
     width: '100%',
-    height: '13.3rem'
+    height: '13.3rem',
+    marginTop: '1.5rem'
 }
 
 export default BarNavigation; 
