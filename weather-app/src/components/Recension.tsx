@@ -3,13 +3,21 @@ import React, { Component, CSSProperties } from 'react'
 
 interface Props {}
 interface State {
-    review: String
+    review: String,
+    list: Array<String>
 }
 export default class Recension extends Component<Props, State> {
 
-    state = {
-        review: ''
+  constructor(props: Props){
+    super(props);
+    this.state = {
+      review: '',
+      list: []
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
     
   handleChange = (event: any) => {
     this.setState({ 
@@ -18,7 +26,8 @@ export default class Recension extends Component<Props, State> {
 
   handleSubmit = (event: any) => {
       event.preventDefault();
-
+      this.state.list.push(this.state.review);
+      this.setState({ list: this.state.list })
   }
 
   render() {
@@ -28,14 +37,22 @@ export default class Recension extends Component<Props, State> {
           <label style={labelStyle}>Add Review:</label>
           <div style={divStyle}>
             <input
-              placeholder="Add review..."
+              placeholder="Lägg till recension..."
               style={inputStyle}
               type="text"
               onChange={this.handleChange}
             />
             <button style={buttonStyle} onClick={this.handleSubmit}>
-              Add
+              +
             </button>
+          </div>
+          <div style={reviewStyle}>
+            <h4 style={titleStyle}>Recensioner:</h4>
+            <ul>
+              {this.state.list.map((item) => (
+                <li style={listStyle}>{item}</li>
+              ))}
+            </ul>
           </div>
         </form>
       </div>
@@ -55,7 +72,7 @@ const labelStyle: CSSProperties  = {
 }
 
 const inputStyle: CSSProperties = {
-  width: "15rem",
+  width: "20rem",
   padding: "0.5rem",
   borderRadius: ".5rem",
   outline: "none",
@@ -69,7 +86,7 @@ const buttonStyle: CSSProperties = {
   height: "3rem",
   borderRadius: ".5rem",
   border: "solid 1px black",
-  fontSize: "1.2rem",
+  fontSize: "2.2rem",
   background: "#6e3b3b",
   color: "#f3cf7a",
   fontWeight: 'bold',
@@ -80,3 +97,27 @@ const divStyle: CSSProperties = {
     display: 'flex',
     flexDirection: 'row',
 }
+
+const listStyle: CSSProperties = {
+  listStyle: "none",
+  padding: "1rem",
+  borderRadius: ".5rem",
+  border: "solid 1px black",
+  margin: "1rem 0rem",
+  background: "#ffff",
+};
+
+const titleStyle: CSSProperties = {
+  marginTop: "1rem",
+  color: 'white',
+};
+
+const reviewStyle: CSSProperties = {
+  borderRadius: ".5rem",
+  border: "solid 1px black",
+  padding: "1rem",
+  margin: "1rem 0rem",
+  height: "20rem",
+  background: "#6e3b3b",
+  overflow: 'auto'
+};
