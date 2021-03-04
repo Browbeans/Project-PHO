@@ -4,47 +4,44 @@ import Map from './Map';
 import Recension from './Recension';
 
 interface Props {
-    bar: {
+    object: {
         title: string 
         image: string
         info: string
         lat: number
         lng: number
     }
-
-    id: string
 }
 
 
 export default function BarItem(props: Props) {
-    const imageSource = `../assets/${props.bar.title}.jpg`;
+    const imageSource = `../assets/${props.object.title}.jpg`;
 
-    console.log(props.bar.title)
     return (
-      <div style={styleContainer}>
-        <div>
-          <h2>{props.bar.title}</h2>
-        </div>
-        <div style={flexRow}>
-          <div style={textContainer}>
-            <div style={flexColumn}>
-              <p>{props.bar.info}</p>
-              <Recension />
-            </div>
-          </div>
 
-          <div style={rightContainer}>
-            <div style={imageStyle}>
-              <img style={imageStyle} src={imageSource} alt="" />
+        <div style={styleContainer}>
+            <div>
+                <h2>{props.object.title}</h2>
             </div>
-            <div style={mapStyle}>
-              <ErrorBoundary>
-                <Map bar={props.bar} />
-              </ErrorBoundary>
+            <div style={flexRow}>
+                <div style={textContainer}>
+                    <p>{props.object.info}</p>
+                    <Recension />
+                </div>
+                <div style={rightContainer}>
+                    <div style={imageStyle}>
+                        <img style={imageStyle} src={imageSource} alt=""/>
+                    </div>
+                    <div style={mapStyle}>
+                        <ErrorBoundary>
+                            <Map bar={props.object}/>
+                        </ErrorBoundary>
+                    </div>
+                </div>
+
             </div>
           </div>
-        </div>
-      </div>
+ 
     );
 }
 
