@@ -3,30 +3,27 @@ import ErrorBoundary from './ErrorBoundary';
 import Map from './Map';
 
 interface Props {
-    bar: {
+    object: {
         title: string 
         image: string
         info: string
         lat: number
         lng: number
     }
-
-    id: string
 }
 
 
 export default function BarItem(props: Props) {
-    const imageSource = `../assets/${props.bar.title}.jpg`;
+    const imageSource = `../assets/${props.object.title}.jpg`;
 
-    console.log(props.bar.title)
     return (
         <div style={styleContainer}>
             <div>
-                <h2>{props.bar.title}</h2>
+                <h2>{props.object.title}</h2>
             </div>
             <div style={flexRow}>
                 <div style={textContainer}>
-                    <p>{props.bar.info}</p>
+                    <p>{props.object.info}</p>
                 </div>
                 <div style={rightContainer}>
                     <div style={imageStyle}>
@@ -34,7 +31,7 @@ export default function BarItem(props: Props) {
                     </div>
                     <div style={mapStyle}>
                         <ErrorBoundary>
-                            <Map bar={props.bar}/>
+                            <Map bar={props.object}/>
                         </ErrorBoundary>
                     </div>
                 </div>
