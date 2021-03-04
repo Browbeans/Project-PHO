@@ -1,11 +1,13 @@
 import React, { CSSProperties } from 'react';
 
 interface Props {
-    bar: {
-        title: string, 
-        image: string, 
-        info: string
-    }
+  object: {
+      title: string,
+      info: string, 
+      image: string,
+      lat: number, 
+      lng: number
+  }
 }
 
 
@@ -13,11 +15,11 @@ export default function BarItem(props: Props) {
     return (
         <div style={styleContainer}>
             <div>
-                <h2>{props.bar.title}</h2>
+                <h2>{props.object.title}</h2>
             </div>
             <div style={flexRow}>
                 <div style={textContainer}>
-                    <p>{props.bar.info}</p>
+                    <p>{props.object.info}</p>
                 </div>
                 <div style={rightContainer}>
                     <div style={imageStyle}>
@@ -39,6 +41,8 @@ const styleContainer: CSSProperties = {
     width: '90%',
     margin: 'auto',
     flexDirection: 'column',
+    position: 'fixed', 
+    zIndex: 1
 }
 
 const imageStyle: CSSProperties = {

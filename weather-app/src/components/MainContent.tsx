@@ -4,8 +4,9 @@ import { Link, Route, Switch } from 'react-router-dom';
 import BarItem from './BarItem';
 import BarNavigation from './BarNavigation';
 import ContentItem from './ContentItem';
-  interface Props {
-  }
+import { Data } from './Data'
+interface Props {
+}
 
 const MainContent: React.FC<Props> = ()  => {
 
@@ -20,102 +21,38 @@ interface Bar {
   info: string,
 }
 
-const areas: Area[] = [
-  {
-      name: 'Avenyn', 
-      bars: [
-        {
-          title: 'Yaki-da', 
-          image: '', 
-          info: 'fdsfsdfsdfsdfsdfsdf'
-        }, 
-        {
-          title: 'Lounge', 
-          image: '', 
-          info: 'fdsfsdfsdfsdfsdfsdf'
-        }, 
-        {
-          title: 'Hardrock-cafe', 
-          image: '', 
-          info: 'fdsfsdfsdfsdfsdfsdf'
-        },
-        {
-          title: 'Valand', 
-          image: '', 
-          info: 'fdsfsdfsdfsdfsdfsdf'
-        },
-      ], 
-  },
-  {
-    name: 'Hisingen', 
-    bars: [
-      {
-        title: 'Ölstugan', 
-        image: '', 
-        info: 'fdsfsdfsdfsdfsdfsdf'
-      }, 
-      {
-        title: 'Lindholmen-streetfood', 
-        image: '', 
-        info: 'fdsfsdfsdfsdfsdfsdf'
-      }, 
-      {
-        title: 'Antibarbarus', 
-        image: '', 
-        info: 'fdsfsdfsdfsdfsdfsdf'
-      },
-      {
-        title: 'Kville-biljard', 
-        image: '', 
-        info: 'fdsfsdfsdfsdfsdfsdf'
-      },
-    ],
-  },
-  {
-    name: 'Järntorget', 
-    bars: [
-      {
-        title: 'Soho', 
-        image: '', 
-        info: 'fdsfsdfsdfsdfsdfsdf'
-      }, 
-      {
-        title: 'Brygghuset', 
-        image: '', 
-        info: 'fdsfsdfsdfsdfsdfsdf'
-      }, 
-      {
-        title: 'Cafe-publik', 
-        image: '', 
-        info: 'fdsfsdfsdfsdfsdfsdf'
-      },
-      {
-        title: 'Hops', 
-        image: '', 
-        info: 'fdsfsdfsdfsdfsdfsdf'
-      },
-    ],
-  }
-]
-
   return (
     <div style={rootStyle}>
+      
       <Switch>
           <Route exact path="/"> 
-            {areas.map((area) => 
+            {Data.map((area) => 
                 <ContentItem title={area.name} key={area.name}/>
             )}
           </Route>
-          {areas.map((area) => 
+          {Data.map((area) => 
             <Route key={area.name} path={'/' + area.name}>
               {area.bars.map((bar) => <BarNavigation id={bar.title} key={bar.title}/>)}
             </Route>
-          )} 
+          )}  
+          {Data.map((area) => area.bars.map((bar) =>
+              <Route key={area.name} path={'/' + bar.title}>
+                <BarItem key={bar.title} object={bar}/>
+              </Route>
+            )
+          )}
       </Switch>
     </div>
   );
 }
 
+
+
+// {avenyn.map((value) => (
+//   <Route path={"/" + value.title}>
+//     <BarItem bar={value} id={value.image} />
+//   </Route>
+// ))}
 
 const rootStyle: CSSProperties = {
   display: "flex",
