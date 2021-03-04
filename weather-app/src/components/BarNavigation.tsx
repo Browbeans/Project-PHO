@@ -14,8 +14,10 @@ function BarNavigation(props: Props) {
     return(
             <div style={rootStyle}>
                 <Link to={props.id} style={{ textDecoration: 'none' }}>
-                    <h2 style={textStyle}>{props.id}</h2>     
-                    <img style={imgStyle} src={imageSource} alt=""/>
+                    <h2 style={textStyle}>{props.id}</h2>   
+                    <ErrorBoundary>
+                        <img style={imgStyle} src={imageSource} alt=""/>
+                    </ErrorBoundary>  
                 </Link>
                 <Like/> 
             </div>

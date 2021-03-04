@@ -18,11 +18,16 @@ export default class ErrorBoundary extends Component<Props, State> {
     console.error(`Error: ${error}, ${errorInfo}`);
   }
 
+  goBack() {
+    window.history.back()
+  }
+
   render() {
     if (this.state.hasError) {
       return (
         <div style={errorStyle}>
-          <h1>Something went wrong...</h1>
+          <h1>Något gick fel...</h1>
+          <button onClick={this.goBack}>Tillbaka</button>
         </div>
       );
     }
@@ -32,10 +37,10 @@ export default class ErrorBoundary extends Component<Props, State> {
 
 const errorStyle: CSSProperties = {
   background: 'white',
-  width: 'inherit',
-  height: 'inherit',
   display: 'flex',
+  width: 'inherit', 
+  height: 'inherit',
   flexDirection: 'column',
-  justifyContent: 'center',
+  justifyContent: 'space-evenly',
   alignItems: 'center'
 };
