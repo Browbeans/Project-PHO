@@ -1,4 +1,3 @@
-import { throws } from 'assert';
 import React, { Component, CSSProperties } from 'react'
 
 interface Props {}
@@ -50,7 +49,7 @@ export default class Recension extends Component<Props, State> {
             <h4 style={titleStyle}>Recensioner:</h4>
             <ul>
               {this.state.list.map((item) => (
-                <li style={listStyle}>{item}</li>
+                <li key={item.toString()} style={listStyle}>{item}</li>
               ))}
             </ul>
           </div>

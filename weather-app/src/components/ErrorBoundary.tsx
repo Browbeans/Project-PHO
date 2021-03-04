@@ -32,8 +32,8 @@ export default class ErrorBoundary extends Component<Props, State> {
 
 const errorStyle: CSSProperties = {
   background: 'white',
-  width: '100%',
-  height: '100%',
+  width: 'inherit',
+  height: 'inherit',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',

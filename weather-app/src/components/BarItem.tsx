@@ -55,11 +55,15 @@ const styleContainer: CSSProperties = {
 const imageStyle: CSSProperties = {
     width: '25rem',
     height: '15rem',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
+    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
 }
 
 const mapStyle: CSSProperties = {
-    marginBottom: '2rem'
+    width: '25rem',
+    height: '15rem',
+    marginBottom: '6rem',
+    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
 }
 
 const rightContainer: CSSProperties = {
@@ -67,7 +71,6 @@ const rightContainer: CSSProperties = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center'
-
 }
 
 const flexRow: CSSProperties = {

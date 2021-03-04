@@ -1,7 +1,6 @@
   
 import React, { CSSProperties } from 'react'; 
 import { Link, Route, Switch } from 'react-router-dom';
-import BarItem from './BarItem';
 import ErrorBoundary from './ErrorBoundary';
 import Like from './Like';
 
@@ -13,15 +12,13 @@ interface Props {
 function BarNavigation(props: Props) {
     const imageSource = `../assets/${props.id}.jpg`;
     return(
-        <ErrorBoundary>
             <div style={rootStyle}>
                 <Link to={props.id} style={{ textDecoration: 'none' }}>
-                    <h2 style={textStyle}>{props.id}</h2>
+                    <h2 style={textStyle}>{props.id}</h2>     
                     <img style={imgStyle} src={imageSource} alt=""/>
                 </Link>
                 <Like/> 
             </div>
-        </ErrorBoundary>
     )
 }
 
@@ -50,7 +47,9 @@ const textStyle: CSSProperties = {
 const imgStyle: CSSProperties = {
     width: '100%',
     height: '13.3rem',
-    marginTop: '1.5rem'
+    marginTop: '1.5rem', 
+    borderRadius: '1rem',
+    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
 }
 
 export default BarNavigation; 

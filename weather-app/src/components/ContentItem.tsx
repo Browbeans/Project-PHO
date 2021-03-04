@@ -7,16 +7,15 @@ interface Props {
 }
 function ContentItem(props: Props) {
   const imageSource = `../assets/${props.title}.jpg`;
- 
+
 return (
-  <ErrorBoundary>
+ 
     <Link to={props.title} style={{ textDecoration: 'none' }}>
       <div style={rootStyle}>
         <h2 style={textStyle}>{props.title}</h2>
         <img style={imageStyle} src={imageSource} alt="" />
       </div>
     </Link>
-  </ErrorBoundary>
 );
 }
 

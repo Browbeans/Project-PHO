@@ -1,10 +1,10 @@
-import { ReactComponent } from '*.svg';
 import React, { CSSProperties, useDebugValue } from 'react'; 
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import BarItem from './BarItem';
 import BarNavigation from './BarNavigation';
 import ContentItem from './ContentItem';
 import { Data } from './Data'
+import ErrorBoundary from './ErrorBoundary';
 interface Props {
 }
 
@@ -15,8 +15,11 @@ const MainContent: React.FC<Props> = ()  => {
       
       <Switch>
           <Route exact path="/"> 
+
             {Data.map((area) => 
+            <ErrorBoundary>
                 <ContentItem title={area.name} key={area.name}/>
+            </ErrorBoundary>
             )}
           </Route>
           {Data.map((area) => 

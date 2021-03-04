@@ -1,6 +1,5 @@
 import React, { CSSProperties, lazy, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-//import Layout from './Layout';
 
 const Layout = lazy(() => import('./Layout'));
 

@@ -14,7 +14,6 @@ function Map (props: Props) {
     const width = 200
     const height = 150
     const zoom = 16
-    const token = 'pk.eyJ1IjoiYnJvd2JlYW5zIiwiYSI6ImNrbDIybGQ2ZzBtZ2UyeW80cjhpcjcycTgifQ.Q6gkFkBhlqFEKapZic4Fjw'
     if(props.bar.lat == 57.70135609387745) {
         return (null as any).dsadsf
       }
