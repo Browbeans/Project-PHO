@@ -38,10 +38,8 @@ export default function BarItem(props: Props) {
                         </ErrorBoundary>
                     </div>
                 </div>
-
             </div>
-          </div>
- 
+        </div>
     );
 }
 
@@ -86,7 +84,8 @@ const textContainer: CSSProperties = {
     marginBottom: '2rem',
     display: 'flex',
     alignItems: 'center',
-    fontSize: '1.2rem'
+    fontSize: '1.2rem', 
+    flexDirection: 'column'
 }
 
 const flexColumn: CSSProperties = {
