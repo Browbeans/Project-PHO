@@ -3,26 +3,29 @@ I denna App kan du lokalisera dig mellan tre olika områden i Göteborg, Avenyn,
 När du väl valt ett område renderas 4st olika barer ut som du kan välja mellan. Klicka på en av barerna för mer info. 
 
 [Github-repo](https://github.com/Browbeans/Project-PHO)
-# Starta projektet 
+### Starta projektet 
 För att utveckla eller inspektera arbetet behöver du köra följande kommandon: 
 
 
-# CD 
+### CD 
 
 Först behöver du skriva `cd react-app` 
 för att hamna i rätt mapp
-# npm install 
+### npm install 
 `npm install` behöver köras för att få ned node_modules osv
 
-# npm start
+### npm start
 Sist men inte minst behöver du köra: 
 `npm start` när du väl gjort detta är projektet redo att byggas vidare på och kommer även starta en live-server så du lätt kan följa ditt arbete. 
 
 
+
+
+
+
 # Nedan är övriga kommandon som kommer via create-react-app
 
-
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
