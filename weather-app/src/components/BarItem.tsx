@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
 import ErrorBoundary from './ErrorBoundary';
 import Map from './Map';
+import Recension from './Recension';
 
 interface Props {
     object: {
@@ -17,6 +18,7 @@ export default function BarItem(props: Props) {
     const imageSource = `../assets/${props.object.title}.jpg`;
 
     return (
+
         <div style={styleContainer}>
             <div>
                 <h2>{props.object.title}</h2>
@@ -24,6 +26,7 @@ export default function BarItem(props: Props) {
             <div style={flexRow}>
                 <div style={textContainer}>
                     <p>{props.object.info}</p>
+                    <Recension />
                 </div>
                 <div style={rightContainer}>
                     <div style={imageStyle}>
@@ -35,8 +38,10 @@ export default function BarItem(props: Props) {
                         </ErrorBoundary>
                     </div>
                 </div>
+
             </div>
-        </div>
+          </div>
+ 
     );
 }
 
@@ -82,4 +87,9 @@ const textContainer: CSSProperties = {
     display: 'flex',
     alignItems: 'center',
     fontSize: '1.2rem'
+}
+
+const flexColumn: CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
 }
