@@ -1,6 +1,5 @@
-import React, { CSSProperties } from 'react'; 
-import { Link } from 'react-router-dom';
-import ErrorBoundary from './ErrorBoundary';
+import React, { CSSProperties } from "react";
+import { Link } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -8,15 +7,14 @@ interface Props {
 function ContentItem(props: Props) {
   const imageSource = `../assets/${props.title}.jpg`;
 
-return (
- 
-    <Link to={props.title} style={{ textDecoration: 'none' }}>
+  return (
+    <Link to={props.title} style={{ textDecoration: "none" }}>
       <div style={rootStyle}>
         <h2 style={textStyle}>{props.title}</h2>
         <img style={imageStyle} src={imageSource} alt="" />
       </div>
     </Link>
-);
+  );
 }
 
 const rootStyle: CSSProperties = {
@@ -45,8 +43,8 @@ const imageStyle: CSSProperties = {
   width: "90%",
   height: "60%",
   borderRadius: "1rem",
-  marginBottom: '1.7rem',
+  marginBottom: "1.7rem",
   boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
 };
 
-export default ContentItem; 
+export default ContentItem;
