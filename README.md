@@ -15,13 +15,15 @@ för att hamna i rätt mapp
 ### npm install 
 `npm install` behöver köras för att få ned node_modules osv
 
-### npm run build 
-`npm run build` körs för att bundla ihop projektet
 
-### npm start
-Sist men inte minst behöver du köra: 
+### npm start 
 `npm start` när du väl gjort detta är projektet redo att byggas vidare på och kommer även starta en live-server så du lätt kan följa ditt arbete. 
 
+
+## Bygga projektet 
+
+### npm run build 
+`npm run build` körs för att bundla ihop projektet
 
 
 
