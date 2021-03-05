@@ -1,4 +1,4 @@
-import React, { CSSProperties, useDebugValue } from "react";
+import React, { CSSProperties } from "react";
 import { Route, Switch } from "react-router-dom";
 import BarItem from "./BarItem";
 import BarNavigation from "./BarNavigation";
