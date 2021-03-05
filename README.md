@@ -11,8 +11,12 @@ För att utveckla eller inspektera arbetet behöver du köra följande kommandon
 
 Först behöver du skriva `cd react-app` 
 för att hamna i rätt mapp
+
 ### npm install 
 `npm install` behöver köras för att få ned node_modules osv
+
+### npm run build 
+`npm run build` körs för att bundla ihop projektet
 
 ### npm start
 Sist men inte minst behöver du köra: 
